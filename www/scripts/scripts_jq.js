@@ -6,13 +6,19 @@ $('document').ready(function(){
   			'animation-duration':'1s',
 		});
 		$('.load2').css({
-			'display':'block',
+			'display':'block'
+		});
+		$('.load2').one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+		    $(this).css('display', 'block');
 		});
 	});
 	$('.back_menu').bind('click', function(){
 		$('.load2').css({
 			'animation-name':'slideback',
   			'animation-duration': '2s',
+		});
+		$('.load2').one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+		    $(this).css('display', 'none');
 		});
 	});
 });
