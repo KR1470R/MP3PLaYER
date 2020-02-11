@@ -11,14 +11,30 @@ $('document').ready(function(){
 		$('.load2').one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
 		    $(this).css('display', 'block');
 		});
+		$('.all').css({
+			'animation-name':'blur',
+  			'animation-duration':'1s',
+		})
 	});
-	$('.back_menu').bind('click', function(){
+	$('.arrow').bind('click',function(){
+		$('.arrow').css({
+			'animation-name':'brightarr',
+  			'animation-duration':'1s',
+		})
 		$('.load2').css({
 			'animation-name':'slideback',
   			'animation-duration': '2s',
 		});
 		$('.load2').one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
-		    $(this).css('display', 'none');
+		    $('.load2').css('display', 'none');
+		    $('.arrow').css({
+		    	'animation-name':'brightarr_end',
+  				'animation-duration':'1s',
+		    })
 		});
-	});
+		$('.all').css({
+			'animation-name':'blurout',
+  			'animation-duration':'1s',
+		})
+	})
 });
